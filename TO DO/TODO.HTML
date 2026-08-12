@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>To Do</title>
+</head>
+<body>
+  Tarea: <input id="tarea" type="text">
+  <button onclick="agregarTarea()">Agregar</button>
+
+  <p>Mis tareas:</p>
+  <ul id="lista"></ul>
+  <p>Total de tareas: <span id="total">0</span></p>
+
+  <script>
+    let total = 0;
+
+    function agregarTarea() {
+      const input = document.getElementById('tarea');
+      const texto = input.value.trim();
+
+      if (texto === '') {
+        return;
+      }
+
+      const lista = document.getElementById('lista');
+      const item = document.createElement('li');
+      item.textContent = texto;
+      lista.appendChild(item);
+
+      total++;
+      document.getElementById('total').textContent = total;
+      input.value = '';
+      input.focus();
+    }
+  </script>
+</body>
+</html>

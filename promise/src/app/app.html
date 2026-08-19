@@ -1,0 +1,8 @@
+<h1>Lista de tareas</h1>
+<input [(ngModel)]="newTodo" placeholder="Nueva tarea">
+<button (click)="addTodo()">Agregar</button>
+<ul>
+  @for (todo of todos; track todo) {
+    <li>{{ todo }} <button (click)="removeTodo(todo)">Borrar</button></li>
+  }
+</ul>
